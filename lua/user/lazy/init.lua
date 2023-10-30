@@ -69,6 +69,11 @@ return {
     dependencies = { "nvim-lua/plenary.nvim" },
   },
   {
+    "lewis6991/gitsigns.nvim",
+    event = { "BufEnter" },
+    config = function() require("user.plugins.gitsigns") end,
+  },
+  {
     "iamcco/markdown-preview.nvim",
     build = "cd app && npm install",
     init = function() vim.g.mkdp_filetypes = { "markdown" } end,
@@ -81,10 +86,15 @@ return {
   },
   {
     "L3MON4D3/LuaSnip",
-    dependencies = { "rafamadriz/friendly-snippets" },
     version = "v2.*",
     build = "make install_jsregexp",
-    config = function() require("luasnip.loaders.from_vscode").lazy_load() end,
+  },
+  {
+    "rafamadriz/friendly-snippets",
+    config = function()
+      require("luasnip.loaders.from_vscode").lazy_load()
+      require("luasnip.loaders.from_vscode").lazy_load({ paths = { "./snippets/" } })
+    end,
   },
   {
     "hrsh7th/nvim-cmp",
@@ -103,5 +113,9 @@ return {
   {
     "mhartington/formatter.nvim",
     config = function() require("user.plugins.formatter") end,
+  },
+  {
+    "mfussenegger/nvim-lint",
+    config = function() require("user.plugins.linter") end,
   },
 }
