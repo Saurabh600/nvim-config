@@ -13,7 +13,6 @@ require("formatter").setup({
     },
     python = {
       require("formatter.filetypes.python").black,
-      require("formatter.filetypes.python").isort,
     },
     go = {
       require("formatter.filetypes.go").gofmt,
@@ -21,28 +20,31 @@ require("formatter").setup({
       require("formatter.filetypes.go").goimports,
     },
     html = {
-      require("formatter.filetypes.html").prettier,
+      require("formatter.filetypes.html").prettierd,
     },
     css = {
-      require("formatter.filetypes.css").prettier,
+      require("formatter.filetypes.css").prettierd,
     },
     json = {
-      require("formatter.filetypes.css").prettier,
+      require("formatter.filetypes.json").prettierd,
     },
     javascript = {
-      require("formatter.filetypes.javascript").prettier,
+      require("formatter.filetypes.javascript").prettierd,
     },
     typescript = {
-      require("formatter.filetypes.typescript").prettier,
+      require("formatter.filetypes.typescript").prettierd,
     },
     javascriptreact = {
-      require("formatter.filetypes.javascriptreact").prettier,
+      require("formatter.filetypes.javascriptreact").prettierd,
     },
     typescriptreact = {
-      require("formatter.filetypes.typescriptreact").prettier,
+      require("formatter.filetypes.typescriptreact").prettierd,
+    },
+    rust = {
+      require("formatter.filetypes.rust").rustfmt,
     },
     markdown = {
-      require("formatter.filetypes.markdown").prettier,
+      require("formatter.filetypes.markdown").prettierd,
     },
     ["*"] = {
       require("formatter.filetypes.any").remove_trailing_whitespace,

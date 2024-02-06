@@ -1,31 +1,9 @@
 return {
   {
-    "folke/tokyonight.nvim",
-    lazy = false,
-    priority = 1000,
-    config = function()
-      require("tokyonight").setup({
-        styles = {
-          comments = { italic = false },
-          keywords = { italic = false },
-          functions = {},
-          variables = {},
-        },
-      })
-      vim.cmd.colorscheme("tokyonight")
-    end,
-  },
-  {
-    "catppuccin/nvim",
-    name = "catppuccin",
-    -- priority = 1000,
-    -- config = function() vim.cmd.colorscheme('catppuccin') end,
-  },
-  {
     "nvim-treesitter/nvim-treesitter",
     dependencies = {
       "windwp/nvim-ts-autotag",
-      "JoosepAlviste/nvim-ts-context-commentstring",
+      -- "JoosepAlviste/nvim-ts-context-commentstring",
       "nvim-treesitter/nvim-treesitter-textobjects",
     },
     config = function() require("user.plugins.treesitter") end,
@@ -117,5 +95,25 @@ return {
   {
     "mfussenegger/nvim-lint",
     config = function() require("user.plugins.linter") end,
+  },
+  {
+    "norcalli/nvim-colorizer.lua",
+    config = function()
+      require("colorizer").setup({
+        "css",
+        "html",
+      })
+    end,
+  },
+  {
+    "roobert/tailwindcss-colorizer-cmp.nvim",
+    config = function()
+      require("tailwindcss-colorizer-cmp").setup({
+        color_square_width = 2,
+      })
+      require("cmp").config.formatting = {
+        format = require("tailwindcss-colorizer-cmp").formatter,
+      }
+    end,
   },
 }

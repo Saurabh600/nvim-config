@@ -20,6 +20,10 @@ lspconfig.tsserver.setup({
   capabilities = capabilities,
 })
 
+lspconfig.bashls.setup({
+  capabilities = capabilities,
+})
+
 -- jsonls
 lspconfig.jsonls.setup({
   capabilities = capabilities,
@@ -30,6 +34,16 @@ lspconfig.jsonls.setup({
     },
   },
 })
+
+-- eslint
+-- lspconfig.eslint.setup({
+--   capabilities = capabilities,
+-- })
+
+-- prismals
+-- lspconfig.prismals.setup({
+--   capabilities = capabilities,
+-- })
 
 -- emmet_ls
 lspconfig.emmet_language_server.setup({
@@ -42,8 +56,13 @@ lspconfig.emmet_language_server.setup({
 -- })
 
 -- clangd
+
+-- require("nvim_lspconfig").clangd.setup({
+--   cmd = { "clangd", "--compile-commands-dir=your_compile_commands_dir", "--gcc-toolchain=/path/to/your/gcc" },
+-- })
 lspconfig.clangd.setup({
-  capabilities = vim.tbl_deep_extend("force", capabilities, { offsetEncoding = "utf-8" }),
+  cmd = { "clangd", "-header-insertion=never" },
+  capabilities = capabilities,
 })
 
 -- pyright

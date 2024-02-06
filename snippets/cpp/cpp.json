@@ -1,21 +1,25 @@
 {
-  "codeforces snippet": {
+  "CP Snippet": {
     "prefix": "code",
     "body": [
       "#include <bits/stdc++.h>",
       "using namespace std;",
       "",
-      "int main() {",
-      "  ios::sync_with_stdio(0);",
-      "  cin.tie(0);",
+      "#define int int64_t",
+      "typedef vector<int> vi;",
+      "typedef pair<int, int> pi;",
       "",
-      "  int tt;",
-      "  cin >> tt;",
-      "  while (tt--)$0",
-      "  return 0;",
+      "void solve() {",
       "}",
-      ""
+      "",
+      "int32_t main() {",
+      "    ios::sync_with_stdio(0), cin.tie(0);",
+      "    int tt = 1;",
+      "    cin >> tt;",
+      "    while (tt--) solve();",
+      "    return 0;",
+      "}"
     ],
-    "description": "codeforces snippet"
+    "description": "CP Snippet"
   }
 }

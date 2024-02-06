@@ -16,3 +16,6 @@ keymap("n", "<leader>nf", "<cmd>NvimTreeFindFile<cr>", opts)
 keymap("n", "<C-p>", "<cmd>Telescope find_files<cr>", opts)
 keymap("n", "<leader>fg", "<cmd>Telescope live_grep<cr>", opts)
 keymap("n", "<leader>fh", "<cmd>Telescope help_tags<cr>", opts)
+
+-- format keymap
+keymap("n", "<leader>fm", ":Format<cr>", opts)
